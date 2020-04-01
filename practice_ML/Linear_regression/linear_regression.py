@@ -24,6 +24,7 @@ class Linear_regression:
             error = np.dot(X, self.theta.T) - y
 
             for j in range(parameters):
+                # Should pay attention to the shape of X[:, j]
                 term = error * X[:, j].reshape(length,1)
                 temp[0,j] = self.theta[0,j] - self.alpha / length * np.sum(term)
 
